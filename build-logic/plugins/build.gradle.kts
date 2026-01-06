@@ -1,8 +1,7 @@
 plugins {
     `kotlin-dsl`
-    `java-gradle-plugin`
     id("org.jetbrains.kotlin.jvm") version "1.9.25"
-    `maven-publish`
+    id("com.gradle.plugin-publish") version "2.0.0"
 }
 
 java {
@@ -21,12 +20,19 @@ dependencies {
     compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.22")
 }
 
-version = "1.0.0-SNAPSHOT"
+group = "io.github.liu-wanshun"
+version = "1.0.0"
 gradlePlugin {
+    website = "https://github.com/liu-wanshun/frameworkJar"
+    vcsUrl = "https://github.com/liu-wanshun/frameworkJar"
     plugins {
         create("frameworkJarPlugin") {
             id = "io.github.liu-wanshun.frameworkJar"
             implementationClass = "app.lws.frameworkJar.FrameworkJarPlugin"
+            displayName = "frameworkJar plugin"
+            description =
+                "Gradle plugin to add frameworkJar in to classpath for using android hiden api"
+            tags.set(listOf("android", "framework","hiden api"))
         }
     }
 }
