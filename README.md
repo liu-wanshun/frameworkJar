@@ -1,8 +1,6 @@
 # frameworkJar
 
-[![jitpack](https://jitpack.io/v/io.github.liu-wanshun/frameworkJar.svg)](https://jitpack.io/#io.github.liu-wanshun/frameworkJar)
-[![Weekly download statistics](https://jitpack.io/v/io.github.liu-wanshun/frameworkJar/week.svg)](https://jitpack.io/#io.github.liu-wanshun/frameworkJar)
-[![Monthly download statistics](https://jitpack.io/v/io.github.liu-wanshun/frameworkJar/month.svg)](https://jitpack.io/#io.github.liu-wanshun/frameworkJar)
+[![Gradle Plugin Portal](https://img.shields.io/gradle-plugin-portal/v/io.github.liu-wanshun.frameworkJar)](https://plugins.gradle.org/plugin/io.github.liu-wanshun.frameworkJar)
 [![license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 
       A gradle plugin for add frameworkJar in to classpath for using android hiden api
@@ -16,7 +14,7 @@ Using the [plugins DSL](https://docs.gradle.org/current/userguide/plugins.html#s
 pluginManagement {
    repositories {
       maven {
-         url = uri("https://www.jitpack.io/")
+         gradlePluginPortal()
       }
    }
 }
@@ -40,7 +38,7 @@ plugins {
 buildscript {
     repositories {
         maven {
-            url = uri("https://www.jitpack.io/")
+            gradlePluginPortal()
         }
     }
     dependencies {
