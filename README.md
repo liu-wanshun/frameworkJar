@@ -5,6 +5,13 @@
 
       A gradle plugin for add frameworkJar in to classpath for using android hiden api
 
+## Compatibility
+
+|     | Minimum version | 
+|-----|----------------:|
+| AGP |           7.3.0 |  
+| JDK |              11 |  
+
 ## Add Gradle Plugin
 
 Using the [plugins DSL](https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block):

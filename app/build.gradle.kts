@@ -11,14 +11,18 @@ android {
         minSdk = 24
         targetSdk = 34
     }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
 }
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
+        languageVersion.set(JavaLanguageVersion.of(11))
     }
 }
 dependencies {
-    frameworkJar("androidx.core:core:1.0.0")
+    frameworkJar("androidx.collection:collection:1.0.0")
     // implementation("androidx.core:core:1.0.0")
 }

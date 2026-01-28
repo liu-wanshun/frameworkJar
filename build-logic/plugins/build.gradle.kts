@@ -1,7 +1,10 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
+
 plugins {
-    `kotlin-dsl`
-    id("org.jetbrains.kotlin.jvm") version "1.9.25"
     id("com.gradle.plugin-publish") version "2.0.0"
+    kotlin("jvm") version "2.3.0"
+    kotlin("plugin.sam.with.receiver") version "2.3.0"
 }
 
 java {
@@ -10,14 +13,19 @@ java {
 }
 kotlin {
     compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+        jvmTarget = JvmTarget.JVM_11
+        apiVersion = KotlinVersion.KOTLIN_1_9
+        languageVersion = KotlinVersion.KOTLIN_1_9
     }
+    coreLibrariesVersion = "1.9.25"
+}
+samWithReceiver {
+    annotation("org.gradle.api.HasImplicitReceiver")
 }
 
 dependencies {
-    compileOnly("com.android.tools.build:gradle-api:7.4.0")
-    compileOnly("com.android.tools.build:gradle:7.4.0")
-    compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.22")
+    compileOnly(gradleKotlinDsl())
+    compileOnly("com.android.tools.build:gradle-api:7.3.0")
 }
 
 group = "io.github.liu-wanshun"
