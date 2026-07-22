@@ -30,6 +30,14 @@ dependencies {
 
 group = "io.github.liu-wanshun"
 version = "1.0.0"
+base.archivesName = "frameworkJar"
+publishing {
+    publications {
+        maybeCreate<MavenPublication>("pluginMaven").apply {
+            artifactId = base.archivesName.get()
+        }
+    }
+}
 gradlePlugin {
     website = "https://github.com/liu-wanshun/frameworkJar"
     vcsUrl = "https://github.com/liu-wanshun/frameworkJar"
