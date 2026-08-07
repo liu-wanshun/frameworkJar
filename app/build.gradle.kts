@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     id("io.github.liu-wanshun.frameworkJar")
 }
 
@@ -24,5 +23,5 @@ java {
 }
 dependencies {
     frameworkJar("androidx.collection:collection:1.0.0")
-    // implementation("androidx.core:core:1.0.0")
+    implementation("androidx.core:core:1.0.0")
 }
